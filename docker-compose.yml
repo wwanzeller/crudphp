@@ -14,13 +14,13 @@ services:
     volumes:
       - ./:/var/www
     networks:
-      - php
+      - crud-php
     depends_on:
       - nginx
       - mysql
  
   nginx:
-    container_name: php-nginx
+    container_name: crud-php-nginx
     image: nginx:alpine
     restart: unless-stopped
     expose: 
@@ -31,10 +31,10 @@ services:
       - ./:/var/www
       - ./docker/nginx/:/etc/nginx/conf.d/
     networks:
-      - php
+      - crud-php
  
   mysql:
-    container_name: php-mysql
+    container_name: crud-php-mysql
     image: mysql:latest
     restart: unless-stopped
     environment:
@@ -49,10 +49,10 @@ services:
     ports:
       - 3388:3306
     networks:
-      - php
+      - crud-php
   
   phpmyadmin:
-    container_name: php-phpmyadmin
+    container_name: crud-php-phpmyadmin
     image: phpmyadmin:latest
     restart: unless-stopped
     expose:
@@ -62,8 +62,8 @@ services:
     environment:
       - PMA_ARBITRARY=1
     networks:
-      - php
+      - crud-php
 
 networks:
-  php:
+  crud-php:
     driver: bridge
