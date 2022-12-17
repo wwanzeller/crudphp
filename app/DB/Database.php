@@ -3,8 +3,8 @@
 namespace App\DB;
 
 //DEPENDENCIAS DO PROJETO
-use \PDO;
-use \PDOException;
+use PDO;
+use PDOException;
 
 class Database {
 

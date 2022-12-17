@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 //DEPENDENCIAS DA CLASSE
-use \App\DB\Database;
+use App\DB\Database;
 
 class Vaga {
 
