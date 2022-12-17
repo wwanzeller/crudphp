@@ -4,7 +4,7 @@
 require __DIR__.'/../vendor/autoload.php';
 
 //DEPENDÊNCIAS DO PROJETO
-use \App\Entity\Vaga;
+use App\Entity\Vaga;
 
 //VALIDAÇÃO E INSERÇÃO DE UMA VAGA
 if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
