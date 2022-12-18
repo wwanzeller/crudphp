@@ -10,6 +10,6 @@
             <div class="container">
                 <div class="text-light shadow p-3 mb-5 mt-3 bg-primary rounded">
                     <h1>Desenvolvimento WEB</h1>
-                    <p>Exemplo de CRUD com PHP orientado a objetios</p>
+                    <p>Exemplo de CRUD com PHP orientado a objetos</p>
                 </div>
 
