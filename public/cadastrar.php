@@ -3,14 +3,15 @@
 //AUTOLOAD
 require __DIR__.'/../vendor/autoload.php';
 
-define('TITLE', 'Registar Vaga');
+define('TITLE', 'Editar Vaga');
 
 //DEPENDÊNCIAS DO PROJETO
 use App\Entity\Vaga;
+$obVaga = new Vaga;
 
 //VALIDAÇÃO E INSERÇÃO DE UMA VAGA
 if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
-    $obVaga = new Vaga;
+    
     $obVaga->titulo    = $_POST['titulo'];
     $obVaga->descricao = $_POST['descricao'];
     $obVaga->ativo     = $_POST['ativo'];

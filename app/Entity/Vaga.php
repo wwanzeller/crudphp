@@ -109,5 +109,15 @@ class Vaga {
         return (new Database('vagas'))->select('id='.$id)
                                       ->fetchObject(self::class);
     }
+
+    /**
+     * Método responsável por excluir uma vaga
+     *
+     * @return boolean
+     */
+    public function excluir(): bool
+    {
+        return (new Database('vagas'))->delete('id = '.$this->id);
+    }
     
 }

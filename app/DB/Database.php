@@ -152,6 +152,25 @@ class Database {
         // EXECUTA A ATUALIZAÇÃO
         $this->execute($query, array_values($values));
        
+        // RETORNA SUCESSO
+        return true;
+    }
+
+    /**
+     * Método responsável por excluir dados do banco
+     *
+     * @param String $where
+     * @return boolean
+     */
+    public function delete(String $where) : bool
+    {
+        // PREPARA A QUERY
+        $query = 'DELETE FROM ' .$this->table. ' WHERE '.$where;
+
+        //EXECUTA A DELEÇÃO
+        $this->execute($query);
+        
+        // RETORNA SUCESSO
         return true;
     }
 

@@ -3,8 +3,6 @@
 //AUTOLOAD
 require __DIR__.'/../vendor/autoload.php';
 
-define('TITLE', 'Editar Vaga');
-
 //DEPENDÊNCIAS DO PROJETO
 use App\Entity\Vaga;
 
@@ -26,12 +24,8 @@ if (!$obVaga instanceof Vaga) {
 //echo "<pre>"; print_r($obVaga); "</pre>"; exit;
 
 //VALIDAÇÃO E INSERÇÃO DE UMA VAGA
-if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
-    $obVaga->titulo    = $_POST['titulo'];
-    $obVaga->descricao = $_POST['descricao'];
-    $obVaga->ativo     = $_POST['ativo'];
-
-    $obVaga->atualizar();
+if(isset($_POST['excluir'])){
+    $obVaga->excluir();
 
     //RETORNA PARA PÁGINA PRINCIPAL COM MENSAGEM DE SUCESSO
     header('location: index.php?status=success');
@@ -40,5 +34,5 @@ if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
 
 //INCLUDES DO PROJETOS
 include __DIR__.'/../includes/head.php';
-include __DIR__.'/../includes/formulario.php';
+include __DIR__.'/../includes/confirmar-exclusao.php';
 include __DIR__.'/../includes/footer.php';
