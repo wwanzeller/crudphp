@@ -5,6 +5,7 @@ namespace App\DB;
 //DEPENDENCIAS DO PROJETO
 use PDO;
 use PDOException;
+use Throwable;
 
 class Database {
 
@@ -67,7 +68,7 @@ class Database {
         try {
             $this->connection = new PDO('mysql:host='.self::HOST.';dbname='.self::NAME,self::USER,self::PASS);
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
+        } catch (Throwable | PDOException $e) {
             die('ERROR:' . $e->getMessage());
         }
     }
@@ -86,7 +87,7 @@ class Database {
            $statement->execute($params);
            return $statement;
 
-        } catch (PDOException $e) {
+        } catch (Throwable | PDOException $e) {
             die('ERROR:' . $e->getMessage());
         }
     }

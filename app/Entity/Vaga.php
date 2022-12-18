@@ -50,7 +50,6 @@ class Vaga {
     public function cadastrar() : bool
     {
         //DEFINIR DATA
-
         $this->data = date('Y-m-d H:i:s');
 
         //INSERIR VAGA NO BANCO
