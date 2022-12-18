@@ -2,11 +2,11 @@
 
 Clone o repositório:
 ```sh
-git clone https://github.com/wwanzeller/php.git php
+git clone https://github.com/wwanzeller/crudphp.git php
 ```
 
 ```sh
-cd php/
+cd crudphp/
 ```
 
 Remova o versionamento:
