@@ -8,7 +8,7 @@
     </head>
         <body class="bg-dark text-light">
             <div class="container">
-                <div class="shadow p-3 mb-5 bg-danger rounded">
+                <div class="shadow p-3 mb-5 mt-3 bg-primary rounded">
                     <h1>Desenvolvimento WEB</h1>
                     <p>Exemplo de CRUD com PHP orientado a objetios</p>
                 </div>
