@@ -47,7 +47,7 @@ class Vaga {
      *
      * @return boolean
      */
-    public function cadastrar() : bool
+    public function registar() : bool
     {
         //DEFINIR DATA
         $this->data = date('Y-m-d H:i:s');

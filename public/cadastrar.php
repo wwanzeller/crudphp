@@ -13,7 +13,7 @@ if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
     $obVaga->descricao = $_POST['descricao'];
     $obVaga->ativo     = $_POST['ativo'];
 
-    $obVaga->cadastrar();
+    $obVaga->registar();
 
     //RETORNA PARA PÁGINA PRINCIPAL COM MENSAGEM DE SUCESSO
     header('location: index.php?status=succes');
