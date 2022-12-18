@@ -95,7 +95,7 @@ class Database {
     /**
      * Método responsável por inserir dados no banco
      *
-     * @param array $values [fiels => value]
+     * @param array $values [fields => value]
      * @return integer ID Inserido
      */
     public function insert(array $values) : int
@@ -111,6 +111,48 @@ class Database {
         $this->execute($query, array_values($values));
        
         return $this->connection->lastInsertId();
+    }
+
+    /**
+     * Método responsável por realizar uma consulta no banco
+     *
+     * @param String|null $where
+     * @param String|null $order
+     * @param String|null $limit
+     * @param String|null $fields
+     * @return PDOStatement
+     */
+    public function select(String $where = null, String $order = null, String $limit = null, String $fields = '*')
+    {
+        // MONTA A QUERY
+        $where = !empty($where) ? 'WHERE ' . $where : '';
+        $order = !empty($order) ? 'ORDER BY ' . $order : '';
+        $limit = !empty($limit) ? 'LIMIT ' . $limit : '';
+        $query = 'SELECT '.$fields.' FROM '.$this->table. ' '.$where.' '.$order.' '.$limit;
+
+        // EXECUTA O INSERT
+        return $this->execute($query);
+    }
+
+    /**
+     * Método responsável por atualizar uma vaga
+     *
+     * @param String $where
+     * @param Array $values
+     * @return boolean
+     */
+    public function update(String $where, Array $values): bool
+    {
+        //DADOS DA QUERY
+        $fields = array_keys($values);
+
+        //MONTA A QUERY
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,', $fields).'=? WHERE ' . $where;
+
+        // EXECUTA A ATUALIZAÇÃO
+        $this->execute($query, array_values($values));
+       
+        return true;
     }
 
 }
