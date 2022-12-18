@@ -23,8 +23,6 @@ if (!$obVaga instanceof Vaga) {
     exit;
 }
 
-//echo "<pre>"; print_r($obVaga); "</pre>"; exit;
-
 //VALIDAÇÃO E INSERÇÃO DE UMA VAGA
 if(isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])){
     $obVaga->titulo    = $_POST['titulo'];

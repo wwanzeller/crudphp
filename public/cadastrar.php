@@ -7,6 +7,8 @@ define('TITLE', 'Editar Vaga');
 
 //DEPENDÊNCIAS DO PROJETO
 use App\Entity\Vaga;
+
+//INSTANCIA OBJETO VAGA
 $obVaga = new Vaga;
 
 //VALIDAÇÃO E INSERÇÃO DE UMA VAGA

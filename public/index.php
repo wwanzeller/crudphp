@@ -5,6 +5,7 @@ require __DIR__.'/../vendor/autoload.php';
 
 use App\Entity\Vaga;
 
+// BUSCA TODAS AS VAGAS NO BANCO DE DADOS
 $vagas = Vaga::getVagas();
 
 //INCLUDES DO PROJETO
