@@ -98,7 +98,7 @@ class Database {
      * @param array $values [fields => value]
      * @return integer ID Inserido
      */
-    public function insert(array $values) : int
+    public function create(array $values) : int
     {
         // DADOS DA QUERY
         $fields = array_keys($values);
@@ -122,7 +122,7 @@ class Database {
      * @param String|null $fields
      * @return PDOStatement
      */
-    public function select(String $where = null, String $order = null, String $limit = null, String $fields = '*')
+    public function read(String $where = null, String $order = null, String $limit = null, String $fields = '*')
     {
         // MONTA A QUERY
         $where = !empty($where) ? 'WHERE ' . $where : '';

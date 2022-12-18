@@ -56,7 +56,7 @@ class Vaga {
 
         //INSERIR VAGA NO BANCO
         $obDatabase = new Database('vagas');
-        $this->id = $obDatabase->insert([
+        $this->id = $obDatabase->create([
                                             'titulo'    => $this->titulo,
                                             'descricao' => $this->descricao,
                                             'ativo'     => $this->ativo,
@@ -94,7 +94,7 @@ class Vaga {
      */
     public static function getVagas(String $where = null, String $order = null, String $limit = null) : array
     {
-        return (new Database('vagas'))->select($where, $order, $limit)
+        return (new Database('vagas'))->read($where, $order, $limit)
                                       ->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 
@@ -106,7 +106,7 @@ class Vaga {
      */
     public static function getVaga(Int $id)
     {
-        return (new Database('vagas'))->select('id='.$id)
+        return (new Database('vagas'))->read('id='.$id)
                                       ->fetchObject(self::class);
     }
 
